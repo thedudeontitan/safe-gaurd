@@ -12,16 +12,15 @@ function Navbar() {
     <section className="fixed w-full">
       <div className="lg:flex lg:flex-row py-4 lg:px-5 px-3 bg-black text-white hidden shadow-xl ">
         <div className="flex flex-row">
-          <NavLink className="flex flex-row pb-2 mr-auto" to="/home">
+          <NavLink className="flex flex-row pb-2" to="/home">
             {/* <img src={logo} alt="btc logo" className="w-10 h-10 p-1 " /> */}
-            <div className="font-semibold text-lg2 lg:text-xl my-auto pl-2">
+            <div className="font-semibold text-lg lg:text-xl my-auto pl-2">
               SafeGaurd
             </div>
           </NavLink>
 
         </div>
-
-          <div className="gap-x-5 gap-y-2 flex flex-col lg:flex-row ml-auto pb-2">
+          <div className="gap-x-5 gap-y-2 flex flex-col lg:flex-row pb-2 w-full justify-end">
             <NavLink
               className={({ isActive }) =>
                 isActive ? activeClass : inActiveClass
@@ -57,7 +56,7 @@ function Navbar() {
                 <div className="">Profile</div>
               </div>
             </NavLink>
-          </div>
+            </div>
       </div>
         <div className="flex flex-row fixed bottom-0 bg-white w-full justify-around text-2xl p-4 shadow-md lg:hidden">
           <NavLink to="/home" className="">

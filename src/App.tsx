@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Group from "./routes/Group";
 import Home from "./routes/Home";
-import GroupDetails from "./components/GroupDetails";
+import GroupDetails from "./routes/GroupDetails";
 
 function App() {
   return (
@@ -14,6 +14,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="group/*" element={<Group />}/>
+          <Route path="transaction/*" element={<Group />}/>
+          {/* <Route path="group/*" element={<Group />}/> */}
+
         </Routes>
       </BrowserRouter>
     </section>
