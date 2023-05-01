@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import GroupDetails from "./GroupDetails";
 import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import AddGroupForm from "../components/AddGroupForm"
 
 export type Group = {
   name: string;
@@ -9,6 +10,7 @@ export type Group = {
   members: {
     name: string;
     image: string;
+    hash: string;
   }[];
 };
 const groupData = [
@@ -17,10 +19,10 @@ const groupData = [
     description: "sdf asdf asdf asdf ",
     "company name": "company name",
     members: [
-      { name: "fasdf1", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
+      { name: "john doe1", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
     ],
   },
   {
@@ -28,10 +30,10 @@ const groupData = [
     description: "sdf asdf asdf asdf ",
     "company name": "company name",
     members: [
-      { name: "fasdf2", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
+      { name: "john doe2", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
     ],
   },
   {
@@ -39,10 +41,10 @@ const groupData = [
     description: "sdf asdf asdf asdf ",
     "company name": "company name",
     members: [
-      { name: "fasdf3", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
+      { name: "john doe3", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
     ],
   },
   {
@@ -50,10 +52,10 @@ const groupData = [
     description: "sdf asdf asdf asdf ",
     "company name": "company name",
     members: [
-      { name: "fasdf4", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
-      { name: "fasdf", image: "src/assets/pfp.jpg" },
+      { name: "john doe4", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
+      { name: "john doe", image: "src/assets/pfp.jpg" , hash:"0xde76a4adf9d6e085962ecdacc86033f20ac1d365"},
     ],
   },
 ];
@@ -61,9 +63,13 @@ const groupData = [
 function Group() {
   const [detailsVisibility, setDetailsVisibility] = useState(false);
   const [DetailsData, setDetailsData] = useState<Group>();
+  const [formVisibility, setFormVisibility] = useState(false);
 
   const navigate = useNavigate();
 
+  const handleOnClose = () =>{
+    setFormVisibility(false)
+  }
   return (
     <section className="pt-24 lg:mx-80 pb-10">
       <Routes>
@@ -78,7 +84,7 @@ function Group() {
       {window.location.pathname === "/group" && (
         <div>
           <div className="w-full flex justify-end">
-          <button className=" shadow-md rounded-md p-4 mb-10 hover:scale-105 bg-slate-300">
+          <button onClick={()=>{setFormVisibility(true)}} className=" shadow-md rounded-md p-4 mb-10 hover:scale-105 bg-button">
             <span className="text-xl ">Create New Safe</span>
             <div></div>
           </button>
@@ -98,7 +104,7 @@ function Group() {
                       setDetailsData(d);
                       navigate("details");
                     }}
-                    className="bg-slate-300 w-fit p-2 rounded lg:ml-auto"
+                    className="bg-button w-fit p-2 rounded lg:ml-auto"
                   >
                     Details
                   </button>
@@ -106,6 +112,7 @@ function Group() {
               </div>
             ))}
           </div>
+          <AddGroupForm onClose={handleOnClose} visibility={formVisibility} />
         </div>
       )}
     </section>

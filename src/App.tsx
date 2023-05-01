@@ -8,7 +8,7 @@ import GroupDetails from "./routes/GroupDetails";
 
 function App() {
   return (
-    <section className="bg-[#fbfbfd] min-h-screen">
+    <section className="bg-back min-h-screen">
       <BrowserRouter>
         <Navbar />
         <Routes>
