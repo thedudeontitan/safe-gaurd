@@ -20,7 +20,7 @@ function GroupDetails(props: { data: Group | undefined; visibility: boolean }) {
           <span className="text-3xl ">Group Details</span>
         </div>
         <div className="bg-white w-full flex flex-col gap-2 p-5 shadow rounded-md mb-5">
-          <span>group name: {info?.name}</span>
+          <span>Group Name: {info?.name}</span>
           <span>description: {info?.description}</span>
           <span>company name: {info?.["company name"]}</span>
         </div>

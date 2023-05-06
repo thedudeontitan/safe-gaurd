@@ -12,7 +12,7 @@ function Navbar() {
     <section className="fixed w-full">
       <div className="lg:flex lg:flex-row py-4 lg:px-5 px-3 bg-black text-white hidden shadow-xl ">
         <div className="flex flex-row">
-          <NavLink className="flex flex-row pb-2" to="/home">
+          <NavLink className="flex flex-row pb-2" to="/">
             {/* <img src={logo} alt="btc logo" className="w-10 h-10 p-1 " /> */}
             <div className="font-semibold text-lg lg:text-xl my-auto pl-2">
               SafeGaurd
