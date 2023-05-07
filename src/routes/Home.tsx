@@ -25,12 +25,12 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <section className="pt-24 lg:mx-80 pb-10">
+    <section className="pt-10 mx-5 lg:pt-24 lg:mx-80 pb-10">
       <div className="flex flex-col gap-4">
-        <div className="h-full shadow-md rounded-md p-5">
+        <div className="h-full shadow-md rounded-md p-5 bg-white">
           <span>details</span>
         </div>
-        <div className="flex flex-col h-full shadow-md rounded-md p-5">
+        <div className="flex flex-col h-full shadow-md rounded-md p-5 bg-white">
           <span className="text-lg">Recent Transaction</span>
           <div className="divide-y-2 pt-4">
             {txDetails.slice(0, 3).map((data) => (

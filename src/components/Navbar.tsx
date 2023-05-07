@@ -1,19 +1,20 @@
 import { NavLink } from "react-router-dom";
 import { FaServer } from "react-icons/fa";
-import { BsCurrencyBitcoin } from "react-icons/bs";
-import { BiCube } from "react-icons/bi";
+import { AiFillHome } from "react-icons/ai";
+import { GrTransaction } from "react-icons/gr";
 import {MdOutlineNotificationsActive} from "react-icons/md"
+import logo from "../assets/logo.png"
 
 function Navbar() {
-  const activeClass = "flex border-b-2 border-emerald-500 pb-2 text-emerald-500 font-semibold ";
-  const inActiveClass = "flex hover:text-[#00897b] text-lg font-normal";
+  const activeClass = "flex border-b-2 border-button pb-2 text-button font-semibold ";
+  const inActiveClass = "flex hover:text-button text-lg font-normal";
 
   return (
     <section className="fixed w-full">
       <div className="lg:flex lg:flex-row py-4 lg:px-5 px-3 bg-black text-white hidden shadow-xl ">
         <div className="flex flex-row">
           <NavLink className="flex flex-row pb-2" to="/">
-            {/* <img src={logo} alt="btc logo" className="w-10 h-10 p-1 " /> */}
+            <img src={logo} alt="V logo" className="w-10 h-10 p-1 " />
             <div className="font-semibold text-lg lg:text-xl my-auto pl-2">
               SafeGaurd
             </div>
@@ -28,7 +29,7 @@ function Navbar() {
               to="/group"
             >
               <div className="flex flex-row items-center  m-auto justify-center">
-                <BsCurrencyBitcoin className="text-xl mr-2" />
+                {/* <BsCurrencyBitcoin className="text-xl mr-2" /> */}
                 <div className="">Groups</div>
               </div>
             </NavLink>
@@ -40,7 +41,7 @@ function Navbar() {
               to="/transaction"
             >
               <div className="flex flex-row items-center  m-auto justify-center">
-                <BiCube className="text-xl mr-2" />
+                {/* <GrTransaction className="text-xl mr-2 bg-white" /> */}
                 <div className="">Transactions</div>
               </div>
             </NavLink>
@@ -52,18 +53,18 @@ function Navbar() {
               to="/profile"
             >
               <div className="flex flex-row items-center  m-auto justify-center">
-                <FaServer className="text-xl mr-2" />
+                {/* <FaServer className="text-xl mr-2" /> */}
                 <div className="">Profile</div>
               </div>
             </NavLink>
             </div>
       </div>
         <div className="flex flex-row fixed bottom-0 bg-white w-full justify-around text-2xl p-4 shadow-md lg:hidden">
-          <NavLink to="/home" className="">
-            <BsCurrencyBitcoin />
+          <NavLink to="/" className="">
+            <AiFillHome />
           </NavLink>
           <NavLink to="/group" className="">
-            <BiCube />
+            <GrTransaction />
           </NavLink>
           <NavLink to="/transaction" className="">
             <FaServer />

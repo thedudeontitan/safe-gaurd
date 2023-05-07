@@ -71,7 +71,7 @@ function Group() {
     setFormVisibility(false)
   }
   return (
-    <section className="pt-24 lg:mx-80 pb-10">
+    <section className="pt-10 lg:pt-24 lg:mx-80 pb-10 mx-5">
       <Routes>
         <Route
           path="details"

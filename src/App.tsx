@@ -5,8 +5,11 @@ import Navbar from "./components/Navbar";
 import Group from "./routes/Group";
 import Home from "./routes/Home";
 import GroupDetails from "./routes/GroupDetails";
+import Transaction from "./routes/Transaction";
+import Profile from "./routes/Profile";
 
 function App() {
+
   return (
     <section className="bg-back min-h-screen">
       <BrowserRouter>
@@ -14,8 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="group/*" element={<Group />}/>
-          <Route path="transaction/*" element={<Group />}/>
-          {/* <Route path="group/*" element={<Group />}/> */}
+          <Route path="transaction/*" element={<Transaction/>}/>
+          <Route path="profile" element={<Profile />}/>
 
         </Routes>
       </BrowserRouter>
