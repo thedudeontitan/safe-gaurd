@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaServer } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { GrTransaction } from "react-icons/gr";
@@ -6,14 +6,18 @@ import { MdOutlineNotificationsActive } from "react-icons/md";
 import logo from "../assets/logo.png";
 
 function Navbar() {
+  
+  const navigate = useNavigate();
+
   const activeClass =
     "flex border-b-2 border-button pb-2 text-button font-semibold ";
   const inActiveClass = "flex hover:text-button text-lg font-normal";
 
+
   return (
     <section className="fixed w-full">
       <div className="lg:flex lg:flex-row py-4 bg-black text-white hidden shadow-xl ">
-        <div className="lg:mx-80 flex flex-row w-full">
+        <div className="px-5 flex flex-row w-full">
           <div className="flex flex-row ">
             <NavLink className="flex flex-row pb-2" to="/">
               <img src={logo} alt="V logo" className="w-10 h-10 p-1 " />
@@ -58,7 +62,10 @@ function Navbar() {
                 <div className="">Profile</div>
               </div>
             </NavLink>
-          </div>
+            {
+            <button onClick={()=>(navigate("/login"))} className="border px-4 rounded-md hover:opacity-80 transition-all">Login</button>
+            }
+            </div>
         </div>
       </div>
       <div className="flex flex-row fixed bottom-0 bg-white w-full justify-around text-2xl p-4 shadow-md lg:hidden">

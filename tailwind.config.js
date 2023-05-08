@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        "button":"#C9A7EB",
+        "button":"#c1abff",
+        "btnhigh":"#d1c1ff",
         "back":"#f5f5f5"
       }
     },
